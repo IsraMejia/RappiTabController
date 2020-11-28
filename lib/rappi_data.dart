@@ -125,7 +125,7 @@ const rappiCategories = [
       ),
       RappiProduct(
         name: 'Cafe Taro' ,
-        description: "como te extraño, a ti y a mi acompañante de taro :') ",
+        description: "Extraño ir por un taro :') ",
         price: 34.50, 
         image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuSDfdS696eomysppTjzJaeWxr6xQTVx4kkQ&usqp=CAU",
       ),
@@ -137,7 +137,7 @@ const rappiCategories = [
       ),
       RappiProduct(
         name: 'Cafe Taro' ,
-        description: "como te extraño, a ti y a mi acompañante de taro :') ",
+        description: "Extraño ir por un taro :') ",
         price: 34.50, 
         image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuSDfdS696eomysppTjzJaeWxr6xQTVx4kkQ&usqp=CAU",
       ),
@@ -246,7 +246,7 @@ const rappiCategories = [
       ),
       RappiProduct(
         name: 'Cafe Taro' ,
-        description: "como te extraño, a ti y a mi acompañante de taro :') ",
+        description: "Extraño ir por un taro :') ",
         price: 34.50, 
         image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuSDfdS696eomysppTjzJaeWxr6xQTVx4kkQ&usqp=CAU",
       ),
@@ -258,7 +258,7 @@ const rappiCategories = [
       ),
       RappiProduct(
         name: 'Cafe Taro' ,
-        description: "como te extraño, a ti y a mi acompañante de taro :') ",
+        description: "Extraño ir por un taro :') ",
         price: 34.50, 
         image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuSDfdS696eomysppTjzJaeWxr6xQTVx4kkQ&usqp=CAU",
       ),
