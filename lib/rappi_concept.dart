@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 const _backgroundColor = Color(0xFFF6F9FA);
 const _blueColor = Color(0xFF0D1863);
 const _greenColor = Color(0xFF2BBEBA);
+const categoryHeight = 55.0;
+const productHeight = 100.0;
 
 class RappiConcept extends StatefulWidget {
   
@@ -58,13 +60,14 @@ class _RappiConceptState extends State<RappiConcept> with SingleTickerProviderSt
             ),
 
             Container( //Tabs
-              color: Colors.blue,
+              color: Colors.teal[100] ,
               height: 60,
               child: TabBar(
                 controller: _tabController ,
+                indicatorWeight: 0.9, //En 0.1 es casi imperseptible, pero a mi si me gusta jeje
                 isScrollable: true, 
                 tabs: List.generate(10, (index) => _RappiTabWidget() ), 
-                //Genera la lista de widgets que recibe tabs :)
+                //Genera la lista de 10 widgets que recibe tabs 👀
                 
               ),
             ),
@@ -72,7 +75,19 @@ class _RappiConceptState extends State<RappiConcept> with SingleTickerProviderSt
 
             Expanded(
               child: Container(
-              color: Colors.yellow
+              color: Colors.yellow,
+              child: ListView.builder(
+                itemCount: 20,
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                itemBuilder: (context , index){
+                  if(index.isOdd){//si  el index es impar
+                    return  _RappiCategoryItem();
+                  }else{
+                    return _RappiProductItem();
+                  }
+                   
+                },
+               ),
               ),
             )
           ],
@@ -93,7 +108,7 @@ class _RappiTabWidget  extends StatelessWidget {
          child: Padding(
            padding: const EdgeInsets.all(8.0),
            child: Text(
-             'saludos',
+             'tab Hacker xd',
              style: TextStyle(
                color: _blueColor,
                fontWeight: FontWeight.bold,
@@ -103,4 +118,36 @@ class _RappiTabWidget  extends StatelessWidget {
          ),
       );
     }
+  }// class _RappiTabWidget
+
+
+
+  class _RappiCategoryItem extends StatelessWidget {
+    
+  
+    @override
+    Widget build(BuildContext context) {
+      return Container(
+        height: categoryHeight,
+        alignment: Alignment.centerLeft, //Alinia el contenido al centro a la izquierda B)
+        color: Colors.white,
+        child: Text('Categoría',
+        style: TextStyle(
+          color: _blueColor, fontSize: 16, fontWeight: FontWeight.bold
+         ),
+        ),
+      );
+    }
+  } //class _RappiCategoryItem
+
+  
+class _RappiProductItem extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: productHeight, 
+      child: Text('Producto'),
+    );
   }
+} //class _RappiProductItem 
