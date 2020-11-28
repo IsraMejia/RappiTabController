@@ -17,7 +17,7 @@ class RappiBLoC with ChangeNotifier{
       final category = rappiCategories[i];
       tabs.add( RappiTabCategory(
         category: category,
-        selected: (i==0) ? true : false, //Si es el primer elemento por defecto es true
+        selected: (i==0) ? true : false , //Si es el primer elemento por defecto es true
         )
       );//add
     }//ciclo de asignacion
