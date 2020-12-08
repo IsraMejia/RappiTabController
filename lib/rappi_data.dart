@@ -59,7 +59,7 @@ const rappiCategories = [
     products: [
       RappiProduct(
         name: 'xiaomi mi 10t pro' ,
-        description: 'Telefonoso calidad precio mi pana 😳',
+        description: 'Telefonazo calidad precio mi pana 😳',
         price: 12500.50, 
         image: "https://www.teknofilo.com/wp-content/uploads/2020/09/Xiaomi-Mi-10T-Pro-render-4.jpg",
       ),
@@ -67,11 +67,11 @@ const rappiCategories = [
         name: 'Mac mini M1' ,
         description: 'Lo unico calidad precio de apple xd',
         price: 18500, 
-        image: "https://d500.epimg.net/cincodias/imagenes/2020/03/20/gadgets/1584692208_581745_1584692531_sumario_normal.jpg",
+        image: "https://help.apple.com/assets/5F494C35094622944F3B1EBB/5F494C47094622944F3B1EDA/es_419/d22a8f5456c847d4db6132a978d8c092.png",
       ),
       RappiProduct(
         name: 'xiaomi mi 10t pro' ,
-        description: 'Telefonoso calidad precio mi pana 😳',
+        description: 'Telefonazo calidad precio mi pana 😳',
         price: 12500.50, 
         image: "https://www.teknofilo.com/wp-content/uploads/2020/09/Xiaomi-Mi-10T-Pro-render-4.jpg",
       ),
@@ -79,7 +79,7 @@ const rappiCategories = [
         name: 'Mac mini M1' ,
         description: 'Lo unico calidad precio de apple xd',
         price: 18500, 
-        image: "https://d500.epimg.net/cincodias/imagenes/2020/03/20/gadgets/1584692208_581745_1584692531_sumario_normal.jpg",
+        image: "https://help.apple.com/assets/5F494C35094622944F3B1EBB/5F494C47094622944F3B1EDA/es_419/d22a8f5456c847d4db6132a978d8c092.png",
       ),
     ],
   ),
@@ -180,7 +180,7 @@ const rappiCategories = [
     products: [
       RappiProduct(
         name: 'xiaomi mi 10t pro' ,
-        description: 'Telefonoso calidad precio mi pana 😳',
+        description: 'Telefonazo calidad precio mi pana 😳',
         price: 12500.50, 
         image: "https://www.teknofilo.com/wp-content/uploads/2020/09/Xiaomi-Mi-10T-Pro-render-4.jpg",
       ),
@@ -188,11 +188,11 @@ const rappiCategories = [
         name: 'Mac mini M1' ,
         description: 'Lo unico calidad precio de apple xd',
         price: 18500, 
-        image: "https://d500.epimg.net/cincodias/imagenes/2020/03/20/gadgets/1584692208_581745_1584692531_sumario_normal.jpg",
+        image: "https://help.apple.com/assets/5F494C35094622944F3B1EBB/5F494C47094622944F3B1EDA/es_419/d22a8f5456c847d4db6132a978d8c092.png",
       ),
       RappiProduct(
         name: 'xiaomi mi 10t pro' ,
-        description: 'Telefonoso calidad precio mi pana 😳',
+        description: 'Telefonazo calidad precio mi pana 😳',
         price: 12500.50, 
         image: "https://www.teknofilo.com/wp-content/uploads/2020/09/Xiaomi-Mi-10T-Pro-render-4.jpg",
       ),
@@ -200,7 +200,7 @@ const rappiCategories = [
         name: 'Mac mini M1' ,
         description: 'Lo unico calidad precio de apple xd',
         price: 18500, 
-        image: "https://d500.epimg.net/cincodias/imagenes/2020/03/20/gadgets/1584692208_581745_1584692531_sumario_normal.jpg",
+        image: "https://help.apple.com/assets/5F494C35094622944F3B1EBB/5F494C47094622944F3B1EDA/es_419/d22a8f5456c847d4db6132a978d8c092.png",
       ),
     ],
   ),

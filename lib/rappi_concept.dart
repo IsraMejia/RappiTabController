@@ -1,11 +1,12 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:rappi_ui_tabcontroller/rappi_bloc.dart';
+import 'package:rappi_ui_tabcontroller/rappi_data.dart';
 
 const _backgroundColor = Color(0xFFF6F9FA);
 const _blueColor = Color(0xFF0D1863);
 const _greenColor = Color(0xFF2BBEBA);
-const categoryHeight = 55.0;
-const productHeight = 100.0;
+
 
 class RappiConcept extends StatefulWidget {
   
@@ -59,7 +60,7 @@ class _RappiConceptState extends State<RappiConcept> with SingleTickerProviderSt
               ),
 
               Container( //Tabs
-                color: Colors.teal[100] ,
+                // color: Colors.teal[100] ,
                 height: 60,
                 child: TabBar(
                   controller: _bloc.tabController ,
@@ -77,15 +78,18 @@ class _RappiConceptState extends State<RappiConcept> with SingleTickerProviderSt
 
               Expanded(
                 child: Container(
-                color: Colors.yellow,
+                // color: Colors.yellow,
                 child: ListView.builder(
-                  itemCount: 20,
+                  // itemCount: 20,
+                  itemCount: _bloc.items.length ,
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   itemBuilder: (context , index){
-                    if(index.isOdd){//si  el index es impar
-                      return  _RappiCategoryItem();
+                    final item = _bloc.items[index];
+                    // if(index.isOdd){//si  el index es impar
+                    if(item.isCategory){ //Si en el indice del item es categoria 
+                      return  _RappiCategoryItem(item.category);
                     }else{
-                      return _RappiProductItem();
+                      return _RappiProductItem(item.product);
                     }
                      
                   },
@@ -133,18 +137,22 @@ class _RappiTabWidget  extends StatelessWidget {
 
   class _RappiCategoryItem extends StatelessWidget {
     
+    const _RappiCategoryItem( this.category); //El constructor para cuando se genera y recibe del _bloc
+    final RappiCategory  category;
   
     @override
     Widget build(BuildContext context) {
       return Container(
         height: categoryHeight,
         alignment: Alignment.centerLeft, //Alinia el contenido al centro a la izquierda B)
-        color: Colors.white,
-        child: Text('Categoría',
-        style: TextStyle(
-          color: _blueColor, fontSize: 16, fontWeight: FontWeight.bold
-         ),
+        // color: Colors.cyan[50],
+        child: Card(
+          child: Text( category.name ,
+            style: TextStyle(
+             color: _blueColor, fontSize: 16, fontWeight: FontWeight.bold
+            ),
         ),
+        )
       );
     }
   } //class _RappiCategoryItem
@@ -152,11 +160,71 @@ class _RappiTabWidget  extends StatelessWidget {
   
 class _RappiProductItem extends StatelessWidget {
 
+  const _RappiProductItem ( this.product); //El constructor para cuando se genera y recibe del _bloc
+  final RappiProduct  product;
+
   @override
   Widget build(BuildContext context) {
     return Container(
       height: productHeight, 
-      child: Text('Producto'),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical:5.0),
+        child: Card(
+          elevation: 6,
+          shadowColor: Colors.black54 , 
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12)
+          ),
+          child: Row(
+            children: [
+
+              ClipRRect(
+                borderRadius: BorderRadius.circular(10),
+                child: Container(
+                  padding: const EdgeInsets.all(10.0),
+                  child: FadeInImage.assetNetwork(
+                    placeholder: "assets/loading.gif" , 
+                    image: product.image
+                  ),
+                ),
+              ), 
+              
+              const SizedBox(width: 10,),
+
+              Expanded(
+                child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start ,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(product.name,
+                    style: TextStyle(
+                    color: _blueColor, fontSize: 14, fontWeight: FontWeight.bold
+                    ),
+                  ),
+                  const SizedBox(height: 5),
+                  Text( product.description.toString() , 
+                    maxLines: 2, //Para no saturar el texto :o, recorta todo lo demas
+                    style: TextStyle(
+                    color: _blueColor, fontSize: 12,  
+                    ),                
+                   ),
+                  const SizedBox(height: 5),
+                  Text('\$ ${product.price.toStringAsFixed(2)} ', // \$ <- Para que se pueda ver el $ en la interpolacion
+                    //Solo deja ver 2 decimales 
+                    style: TextStyle(
+                    color: _greenColor, fontSize: 14, fontWeight: FontWeight.bold
+                    ),
+                  ),
+                 ],
+                ),
+              ),
+              
+            ],
+          )
+        
+        ),
+      )
+      
     );
   }
 } //class _RappiProductItem 

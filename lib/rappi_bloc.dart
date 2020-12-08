@@ -2,8 +2,12 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:rappi_ui_tabcontroller/rappi_data.dart';
 
+const categoryHeight = 55.0;
+const productHeight = 110.0;
+
 class RappiBLoC with ChangeNotifier{
    List<RappiTabCategory> tabs = []; //Inicializamos la lista de tipo RappiTabCategory
+   List<RappiItem> items = []; //El arreglo de items
    TabController tabController ;
   
   void init(TickerProvider ticker){
@@ -20,6 +24,14 @@ class RappiBLoC with ChangeNotifier{
         selected: (i==0) ? true : false , //Si es el primer elemento por defecto es true
         )
       );//add
+
+      items.add( RappiItem(category: category) ); //Se agrega la categoria
+      for (int j =0; j<category.products.length ; j++){
+        final product = category.products[j];
+        items.add( RappiItem( product: product) ); //Ahora los productos
+      }
+
+
     }//ciclo de asignacion
   }//init
 
@@ -49,4 +61,18 @@ class RappiTabCategory {
   final RappiCategory category;
   final bool selected;//Estado de seleccionado o no la categoria
 
+}
+
+
+class RappiItem{
+  
+  const RappiItem({
+     this.category,
+     this.product
+  });
+  
+  final RappiCategory category;
+  final RappiProduct product;
+  bool get isCategory => category != null; //Si no es nulo es true el isCategory
+  
 }
