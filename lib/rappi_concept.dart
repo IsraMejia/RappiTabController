@@ -27,6 +27,12 @@ class _RappiConceptState extends State<RappiConcept> with SingleTickerProviderSt
   }
 
   @override
+  void dispose() {
+    _bloc.dispose(); //Libero los recursos del dispose del bloc (tab controller, scroll controller)
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: _backgroundColor,
@@ -38,10 +44,10 @@ class _RappiConceptState extends State<RappiConcept> with SingleTickerProviderSt
             children: [
               Container(//El homepage
                 color: Colors.white ,
-                height: 90,
-                padding: EdgeInsets.all(30),
+                height: 80, 
+                padding: EdgeInsets.symmetric(horizontal :30 , vertical: 15),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween, 
                   children: [
                     Text('HomePage',
                       style: TextStyle(
@@ -81,6 +87,7 @@ class _RappiConceptState extends State<RappiConcept> with SingleTickerProviderSt
                 // color: Colors.yellow,
                 child: ListView.builder(
                   // itemCount: 20,
+                  controller: _bloc.scrollController,
                   itemCount: _bloc.items.length ,
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   itemBuilder: (context , index){
